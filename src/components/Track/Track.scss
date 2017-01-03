@@ -1,0 +1,19 @@
+/* Track */
+.track {
+    //display: inline-block;
+    //width: 100%;
+    //font-size: 0;
+}
+
+.track-container {
+    position: absolute;
+    width: 100%;
+    font-size: 0;
+    transition: top 250ms ease;
+}
+
+.expanded {
+    .track-container {
+        //position: relative;
+    }
+}
