@@ -38,10 +38,9 @@ export class TimeSplice extends Component {
 
     componentDidMount () {
         setTimeout(() => {
-            debugger;
-            const refs = trackRefs;
-            const height = refs.length ? refs[0].clientHeight : 30;
-            this.setState({ height });
+            this.setState({
+                height: this.getRefHeight()
+            });
         }, 10);
     }
 
@@ -50,9 +49,15 @@ export class TimeSplice extends Component {
         if (!expanded) this.setState({ expanded: true });
     }
 
+    getRefHeight () {
+        const height = trackRefs.length ? trackRefs[0].clientHeight : 30;
+        return height;
+    }
+
     showDetails (data) {
         this.setState({
             showDetails: true,
+            height: this.getRefHeight(),
             details: data
         });
     }
@@ -76,11 +81,11 @@ export class TimeSplice extends Component {
     closeDetails () {
         this.setState({
             showDetails: false,
-            details: null
         })
     }
 
     trackCB (ref) {
+        console.log(ref);
         trackRefs.push(ref);
     }
 
@@ -123,7 +128,7 @@ export class TimeSplice extends Component {
                     expanded ? this.renderCloseBtn() : null
                 }
                 {
-                    showDetails ? this.renderDetails(details) : null
+                    details ? this.renderDetails(details) : null
                 }
             </div>
         );

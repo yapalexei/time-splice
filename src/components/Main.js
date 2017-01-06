@@ -63,13 +63,6 @@ class AppComponent extends React.Component {
                 label: 'label 1 and a really looooooooooooonnnnnng Description',
                 //bgColor: '#222',
                 //fontColor: 'white',
-            },
-            {
-                s:       new Date(2017, 1, 1),
-                e:       new Date(2017, 1, 15),
-                label:   'label 4',
-                bgColor: '#dda8a9',
-                //fontColor: 'white'
             }
         ];
 

@@ -1,8 +1,17 @@
 .segment-details {
+    position: relative;
+    top: 100%;
     font-size: 14px;
-    padding: 10px 20px;
+    //padding: 10px 20px;
     background-color: #555;
     box-shadow: inset 0 5px 30px #333;
+    height: 0px;
+    overflow: hidden;
+    transition: height 250ms ease-in-out;
+    .close {
+        top: auto;
+        bottom: 0;
+    }
 }
 
 .header {
